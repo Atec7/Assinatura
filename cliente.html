@@ -9,17 +9,28 @@
 </head>
 <body>
     <header>
-        <h1>Assinatura Digital do Documento</h1>
+        <h2>Atecseven Tecnologia</h2>
+        <p>Termo de Prestação de Serviço para Internet</p>
     </header>
     <main>
         <section class="visualizacao">
-            <h2>Visualização do Documento</h2>
-            <iframe id="pdfViewer" width="100%" height="500px"></iframe>
+          <img src="logo2.png" class="logo">
+            <h4></h4>
+            <iframe id="pdfViewer" width="90%" height="60px"></iframe>
             <button onclick="assinarDocumento()">Assinar Documento</button>
-            <button onclick="baixarPDF()" id="downloadButton" disabled>Baixar PDF</button>
+            <button onclick="baixarPDF()" id="downloadButton" disabled>Baixar
+            TPS</button>
+        </section>
+        <section class="obs">
+          <legend><b>Observações</b></legend>
+          <p>• A leitura do inteiro teor do <b>TPS</b> é imprescindível quanto à
+          prestação ou manutenção do serviço.<br> Portanto, confora se todas as
+          suas informações estão de acordo e atualizadas.</p>
         </section>
     </main>
-
+<footer>
+  <p>©AtecSeven Tecnologia <br> <b>Todos os direitos reservados.</b></p>
+</footer>
     <script>
         async function carregarPDF() {
             const pdfData = localStorage.getItem('pdfData');
