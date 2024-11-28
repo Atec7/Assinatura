@@ -19,6 +19,7 @@
         <section class="link hidden" id="linkSection">
             <h2>Link para o Cliente</h2>
             <input type="text" id="clientLink" readonly>
+            <button onclick="copiarLink()">Copiar Link</button>
         </section>
     </main>
 
@@ -30,7 +31,7 @@
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     localStorage.setItem('pdfData', e.target.result);
-                    const clientLink = `${window.location.origin}/cliente.html`;
+                    const clientLink = 'https://atec7.github.io/Assinatura/cliente.html';
                     document.getElementById('clientLink').value = clientLink;
                     document.getElementById('linkSection').classList.remove('hidden');
                 };
@@ -38,6 +39,13 @@
             } else {
                 alert('Por favor, carregue um arquivo PDF.');
             }
+        }
+
+        function copiarLink() {
+            const linkInput = document.getElementById('clientLink');
+            linkInput.select();
+            document.execCommand('copy');
+            alert('Link copiado para a área de transferência!');
         }
     </script>
 </body>
