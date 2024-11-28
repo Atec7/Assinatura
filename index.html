@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Assinatura Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Plataforma de Assinatura Digital</h1>
+    </header>
+    <main>
+        <section class="upload">
+            <h2>Upload do Documento</h2>
+            <input type="file" id="pdfUpload" accept="application/pdf">
+            <button onclick="carregarPDF()">Carregar PDF</button>
+        </section>
+        <section class="link hidden" id="linkSection">
+            <h2>Link para o Cliente</h2>
+            <input type="text" id="clientLink" readonly>
+        </section>
+    </main>
+
+    <script>
+        function carregarPDF() {
+            const fileInput = document.getElementById('pdfUpload');
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    localStorage.setItem('pdfData', e.target.result);
+                    const clientLink = `${window.location.origin}/cliente.html`;
+                    document.getElementById('clientLink').value = clientLink;
+                    document.getElementById('linkSection').classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert('Por favor, carregue um arquivo PDF.');
+            }
+        }
+    </script>
+</body>
+</html>
