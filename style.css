@@ -49,3 +49,21 @@ button:hover {
 .hidden {
     display: none;
 }
+.visualizacao{
+  background-color:#024b8a ;
+  border-radius: 10px;
+}
+.obs{
+  text-align: left;
+  color:#024b8a;
+  font-size: 19px;
+}
+footer{
+  text-align:center;
+  color:#024b8a;
+  font-size: 10px;
+}
+.logo{
+  width:90px;
+  border-radius: 50%;
+}
